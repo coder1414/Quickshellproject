@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { fetchData } from './services/fetchData';
+import KanbanDisplay from './components/KanbanDisplay.js';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [groupBy, setGroupBy] = useState('status');
+  const [orderBy, setOrderBy] = useState('priority');
+
+  useEffect(() => {
+    const loadTasksAndUsers = async () => {
+      const { tickets, users } = await fetchData();
+      setTasks(tickets);
+      setUsers(users);
+    };
+    loadTasksAndUsers();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <KanbanDisplay 
+        tasks={tasks} 
+        users={users} 
+        groupBy={groupBy} 
+        orderBy={orderBy} 
+        setGroupBy={setGroupBy} 
+        setOrderBy={setOrderBy} 
+      />
     </div>
   );
-}
+};
 
 export default App;

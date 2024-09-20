@@ -1,0 +1,257 @@
+
+
+
+/* Task board layout */
+
+
+.task-board {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .column {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Updated to align name and icon to the left */
+  .column h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align everything to the left */
+    position: relative;
+  }
+  
+  /* Group icons: plus and three dots in the right corner */
+  .group-icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 8px; /* Space between the icons */
+  }
+  
+  .plus-icon, .three-dots-icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  
+  /* Priority and status icons in group headers */
+  .group-priority-icon, .group-status-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  
+  /* Task card styling */
+  .task-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .task-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .task-header h3 {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Circle with first letter of user name aligned to the left */
+  .user-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 8px; /* Space between the circle and the name */
+  }
+  
+  /* Task body styling */
+  .task-body {
+    margin-top: 0.5rem;
+  }
+  
+  .task-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  .task-status h2 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-left: 0.5rem; /* Space between status icon and task title */
+  }
+  
+  /* Priority and status icons */
+  .status-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .priority-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem; /* Space between priority icon and tag */
+  }
+  
+  /* Tag styling */
+  .tag {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+  
+  .tag span {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    color: #333;
+  }
+  
+  /* Filter button */
+  .filter-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  .filter-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Adjust this gap to match the image */
+  }
+  
+  .down-icon {
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+  }
+  
+  /* Pop-up filter menu */
+  .filter-popover {
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    position: absolute;
+    top: 50px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: row; 
+    column-gap: 40px; /* Adds horizontal gap between elements */
+    row-gap: 40px; /* Adds vertical gap between rows, useful for wrapping */
+    align-items: center; /* Ensures the dropdowns and labels are aligned */
+  }
+  
+  .filter-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .filter-group select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  /* the new one */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between user icon and name */
+  }
+  
+  .user-icon {
+    background-color: #007bff;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Priority icon styling */
+  .priority-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px; /* Space between priority icon and group name */
+  }
+  
+  /* Group icons (plus on the right) */
+  .group-icons {
+    display: flex;
+    gap: 8px; /* Space between plus and three-dots icon */
+    align-items: center; /* Ensure vertical alignment with the user name */
+  }
+  
+  .plus-icon .three-dots-icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  .dropdown-menu button {
+    background: none;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .dropdown-menu button:hover {
+    background-color: #f0f0f0;
+  }
+   
